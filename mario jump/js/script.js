@@ -11,16 +11,18 @@ setTimeout(() => {
   
  const loop = setInterval(() => {
  
-    const pipePosition = pipe.offsetLeft;
-    
-    if(pipePosition <=120 ){
-      pipe.style.animation = "none";
-      pipe.style.Left = "${pipePosition}px";
-    }
+  const pipePosition = pipe.offsetLeft;
+  const marioPosition = window.getComputedStyle(mario).bottom;
+
+  console.log(pipePosition);
+  if( pipePosition <= 120 ){
+    pipe.style.animation = "none";
+    pipe.style.Left = `${pipePosition}px`; 
+  }
 
 
 
- },10)
+ }, 10);
  
  
 document.addEventListener("keydown", jump); 
